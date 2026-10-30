@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Демо-сайты</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&family=Manrope:wght@400;600&display=swap">
+<style>
+:root{--bg:#0b0d12;--bg2:#141821;--fg:#eef0f4;--muted:#949cab;--line:rgba(238,240,244,.1);--acc:#ffb357;--acc2:#7fd6e8;--glass:rgba(20,24,33,.6);--fd:"Unbounded","Arial Black",sans-serif;--fb:"Manrope","Segoe UI",sans-serif;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 var(--fb);overflow-x:hidden}
+#c{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+.demo{position:relative;z-index:3;background:var(--acc);color:#111;text-align:center;font-size:13px;font-weight:600;padding:8px 16px}
+header,main,footer{position:relative;z-index:2}
+.w{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header .w{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px}
+.logo{font:700 16px var(--fd)}.logo i{color:var(--acc);font-style:normal}
+nav{display:flex;gap:22px;flex-wrap:wrap}nav a{color:var(--muted);text-decoration:none;font-size:14px}nav a:hover{color:var(--fg)}
+.hero .w{padding-block:clamp(48px,9vw,120px);display:grid;gap:26px}
+.chip{display:inline-flex;gap:8px;width:max-content;max-width:100%;border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(8px);border-radius:99px;padding:6px 14px;font-size:13px;color:var(--muted)}.chip b{color:var(--acc)}
+h1{font:700 clamp(36px,7vw,92px)/1.02 var(--fd);letter-spacing:-.03em;margin:0;max-width:13ch;text-wrap:balance}
+h1 span{display:block;font-weight:400;font-size:.4em;letter-spacing:0;margin-top:14px;color:var(--acc2)}
+.lead{max-width:48ch;color:var(--muted);font-size:clamp(16px,1.7vw,19px);margin:0}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 22px;border-radius:99px;border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(8px);color:var(--fg);text-decoration:none;font-weight:600;transition:transform .2s,border-color .2s;cursor:pointer;font:600 15px var(--fb)}
+.btn:hover{transform:translateY(-2px);border-color:var(--acc)}.btn.p{background:var(--acc);color:#111;border-color:var(--acc)}
+section.s .w{padding-block:clamp(64px,9vw,120px)}
+.eb{color:var(--acc);font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin:0 0 12px;font-weight:600}
+h2{font:700 clamp(26px,4vw,48px)/1.1 var(--fd);letter-spacing:-.02em;margin:0 0 40px;max-width:18ch;text-wrap:balance}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.card{perspective:900px;min-width:0}
+.ci{border:1px solid var(--line);border-radius:20px;background:var(--glass);backdrop-filter:blur(12px);padding:26px;height:100%;transition:transform .4s cubic-bezier(.2,.8,.2,1),border-color .3s;transform-style:preserve-3d}
+.card:hover .ci{border-color:var(--acc)}
+.ic{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--acc),var(--acc2));transform:translateZ(30px);margin-bottom:18px}
+.ci h3{font:700 18px var(--fd);margin:0 0 8px}.ci p{margin:0;color:var(--muted);font-size:15px}.pr{display:block;margin-top:14px;color:var(--acc2);font-weight:600}
+.why{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.why div{background:var(--bg2);padding:26px 22px;min-width:0}.why b{display:block;font:700 clamp(24px,3vw,36px) var(--fd)}.why span{color:var(--muted);font-size:14px}
+.ct{display:grid;grid-template-columns:1.2fr 1fr;gap:24px}
+.box{border:1px solid var(--line);border-radius:24px;background:var(--glass);backdrop-filter:blur(14px);padding:clamp(24px,4vw,44px);min-width:0}
+.row{display:grid;gap:4px;padding-block:14px;border-bottom:1px solid var(--line)}.row:last-child{border:0}
+.row small{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.12em}.row div{font-size:18px;word-break:break-word}
+.phone{font:700 clamp(22px,3vw,32px) var(--fd);user-select:all}
+form{display:grid;gap:12px}label{font-size:13px;color:var(--muted)}
+input{width:100%;padding:13px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg2);color:var(--fg);font:inherit}
+input:focus,a:focus-visible,.btn:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.ok{color:var(--acc2);font-weight:600}
+footer .w{padding-block:36px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:13px}
+.list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.list a{display:grid;gap:4px;padding:18px;border:1px solid var(--line);border-radius:16px;background:var(--glass);backdrop-filter:blur(10px);text-decoration:none;min-width:0;transition:border-color .2s,transform .2s}
+.list a:hover{border-color:var(--acc);transform:translateY(-2px)}.list b{font:700 16px var(--fd)}.list span{color:var(--muted);font-size:13px}
+@media(max-width:900px){.grid,.list{grid-template-columns:minmax(0,1fr)}.why{grid-template-columns:repeat(2,minmax(0,1fr))}.ct{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:520px){nav a:nth-child(n+2){display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="demo" id="demo">Демо-концепты сайтов для компаний без сайта. Данные из открытых карточек Яндекс Карт.</div>
+<canvas id="c" aria-hidden="true"></canvas>
+<div id="app"></div>
+<script>
+var D=[
+["Анкар","Автосервис","Москва, улица Берзарина, 34, стр. 13","+7 (495) 156-08-58","5.0","142450656572"],
+["UCT","Автосервис","Москва, Бережковская набережная, 20, стр. 9","+7 (495) 138-73-00","5.0","53659972545"],
+["Аврора","Детейлинг-центр","Москва, Тверская улица, 28, корп. 2","+7 (904) 568-34-09","5.0","61663259421"],
+["Todchuk Studio","Салон красоты","Москва, Ермолаевский переулок, 5, стр. 1","+7 (495) 823-84-30","5.0","128883898728"],
+["New Nails","Ногтевая студия","Москва, 1-я Тверская-Ямская улица, 13, стр. 1А","+7 (926) 034-34-56","5.0","184677957690"],
+["Id Tattoo Department","Тату-салон","Москва, 3-я улица Ямского Поля, 15","+7 (495) 937-12-89","5.0","144420959673"],
+["Amo SPA МонАрх","Спа-салон","Москва, Ленинградский проспект, 31А, стр. 1","+7 (903) 780-61-61","5.0","183267111710"],
+["Кушетка","Массажный салон","Москва, улица Маросейка, 9/13/2с7","+7 (930) 333-32-23","5.0","33436027631"],
+["Пироги Чегем","Пекарня","Москва, улица Большие Каменщики, 9, стр. Г","+7 (495) 783-59-11","5.0","82581641149"],
+["Cake Home","Кондитерская","Москва, Гостиничный проезд, 4Б","+7 (980) 115-36-08","5.0","174043638213"],
+["Кейк&Кейк","Кондитерская","Москва, Маломосковская улица, 22, стр. 11","+7 (495) 981-12-63","5.0","210081855731"],
+["Лаффериа","Кафе быстрого питания","Москва, Малая Почтовая улица, 8, стр. 2","+7 (939) 888-87-89","5.0","227863439698"],
+["Клюква","Столовая","Москва, Электродная улица, 2с1","+7 (965) 230-13-06","5.0","237525186346"],
+["Столовая на Вильгельма Пика","Столовая","Москва, улица Вильгельма Пика, 16","+7 (910) 450-05-06","4.7","132423979060"],
+["Дантистофф","Стоматологическая клиника","Москва, проспект Мира, 53, стр. 1","+7 (495) 255-58-23","5.0","204971783186"],
+["Менделеев","Стоматологическая клиника","Москва, Подсосенский переулок, 28, стр. 2","+7 (495) 846-13-68","5.0","1702896113"],
+["Центр","Ветеринарная клиника","Москва, Цветной бульвар, 11, стр. 1","+7 (499) 715-70-62","4.9","1008760559"],
+["Vitasport","Фитнес-клуб","Москва, Живописная улица, 21, корп. 2","+7 (495) 104-68-00","5.0","1015516027"],
+["Крейзи Сальса & Бачата","Школа танцев","Москва, Шлюзовая набережная, 8, стр. 2","+7 (958) 765-88-02","5.0","223537085337"],
+["Laundi","Химчистка","Москва, Карамышевская набережная, 2А","+7 (495) 492-28-20","5.0","193971388902"],
+["Zetta","Мебель для кухни на заказ","Москва, Расторгуевский переулок, 1","+7 (495) 191-42-49","4.4","1048873994"],
+["Наше Время","Ремонт часов","Москва, улица Льва Толстого, 23, корп. 7, стр. 3","+7 (495) 144-59-99","5.0","1523117307"],
+["Ювелир","Ювелирная мастерская","Московская область, Жуковский, Молодёжная улица, 15","+7 (925) 777-62-69","5.0","136295923652"],
+["Ремонт кофемашин","Ремонт бытовой техники","Москва, Партизанская улица, 26","+7 (495) 182-30-80","5.0","53242870990"],
+["Айпульс Сервис","Ремонт компьютеров","Москва, Рублёвское шоссе, 40, корп. 2","+7 (495) 798-07-90","5.0","123515930503"],
+["Бибибук","Ремонт компьютеров","Москва, Костромская улица, 17","+7 (495) 208-07-07","5.0","1269664674"],
+["Сервисный центр на Генерала Кузнецова","Ремонт телефонов","Москва, улица Генерала Кузнецова, 17","+7 (903) 789-19-20","5.0","1445789630"]
+];
+var K=[
+[/авто|шин|мойк|детейл/,{acc:'#ff8a3d',acc2:'#7fd6e8',shape:'gear',lead:'Честная диагностика, понятная смета до начала работ и гарантия на ремонт.',h:'Обслуживаем автомобили любых марок',s:[['Диагностика','Компьютерная и ходовая, с отчётом','от 1 500 ₽'],['ТО и замена масла','Проверенные расходники','от 2 500 ₽'],['Ремонт и уход','Ходовая, тормоза, кузов','по смете']],w:['30 мин','на приёмку авто'],w3:['12 мес','гарантия на работы']}],
+[/стомат/,{acc:'#7fe0c8',acc2:'#a9c8ff',shape:'blob',lead:'Лечим без боли и объясняем каждый шаг. План лечения и цена — до начала.',h:'Лечение, гигиена и имплантация',s:[['Консультация','Осмотр и план лечения','от 1 000 ₽'],['Лечение кариеса','Современная анестезия','от 4 500 ₽'],['Профгигиена','Air Flow и полировка','от 5 000 ₽']],w:['15 лет','опыт врачей'],w3:['Без боли','современная анестезия']}],
+[/ветерин/,{acc:'#ffc46b',acc2:'#9be59b',shape:'blob',lead:'Бережно относимся к питомцам и спокойно объясняем всё хозяевам.',h:'Забота о здоровье питомца',s:[['Приём врача','Осмотр и рекомендации','от 1 200 ₽'],['Вакцинация','С отметкой в паспорте','от 1 500 ₽'],['Анализы','Результаты в тот же день','от 900 ₽']],w:['7 дней','в неделю'],w3:['1 день','результаты анализов']}],
+[/пекар|кондит|кафе|столов/,{acc:'#ffb36b',acc2:'#ffd9a8',shape:'torus',lead:'Готовим каждый день из свежих продуктов. Заходите на завтрак, обед или берите с собой.',h:'Меню, которое хочется повторить',s:[['Завтраки и обеды','Каждый день свежее','от 350 ₽'],['Выпечка','Пеклась сегодня утром','от 120 ₽'],['Торты и пироги на заказ','Под ваш праздник','от 2 500 ₽']],w:['Каждое утро','свежая выпечка'],w3:['С собой','и на месте']}],
+[/красот|ногт|тату|спа|массаж/,{acc:'#ff9ec4',acc2:'#c9b6ff',shape:'knot',lead:'Опытные мастера, стерильные инструменты и запись на удобное время.',h:'Услуги для вашего отдыха и красоты',s:[['Уход и стиль','Подберём под вас','от 1 800 ₽'],['Маникюр и педикюр','С покрытием и уходом','от 2 000 ₽'],['Массаж и SPA','Расслабление и восстановление','от 3 000 ₽']],w:['10+','опытных мастеров'],w3:['Онлайн','запись 24/7']}],
+[/фитнес|танц/,{acc:'#b7ff6b',acc2:'#7fd6e8',shape:'ico',lead:'Занятия для любого уровня. Первое занятие поможем спланировать вместе с тренером.',h:'Тренировки, которые дают результат',s:[['Абонемент','Безлимитные посещения','от 3 500 ₽/мес'],['Групповые занятия','Расписание на всю неделю','от 600 ₽'],['Персональный тренер','Программа под вашу цель','от 2 000 ₽']],w:['Пробное','занятие'],w3:['Для всех','уровней подготовки']}],
+[/мебел|ювелир|час/,{acc:'#d9b48a',acc2:'#9fc6d8',shape:'box',lead:'Работаем руками мастеров: аккуратно, в срок и с гарантией.',h:'Мастерская полного цикла',s:[['Консультация','Оценим задачу и сроки','бесплатно'],['Ремонт и реставрация','Бережно к деталям','от 1 500 ₽'],['Изготовление на заказ','Под ваши размеры и стиль','по смете']],w:['Свои','мастера'],w3:['Гарантия','на все работы']}]
+];
+var DF={acc:'#ffb357',acc2:'#7fd6e8',shape:'ico',lead:'Быстро, аккуратно и с гарантией. Бесплатная диагностика при ремонте у нас.',h:'Что мы делаем',s:[['Диагностика','Найдём причину неисправности','бесплатно'],['Срочный ремонт','Часто — в день обращения','от 900 ₽'],['Запчасти','Оригинальные и проверенные','в наличии']],w:['1 день','средний срок ремонта'],w3:['до 12 мес','гарантия']};
+function esc(s){return String(s).replace(/[&<>"]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]})}
+var q=new URLSearchParams(location.search).get('c'),n=parseInt(q,10),co=D[n-1],app=document.getElementById('app'),d=DF;
+if(!co){
+ document.title='Демо-сайты для бизнеса Москвы';
+ app.innerHTML='<main><section class="hero"><div class="w"><span class="chip">'+D.length+' демо-сайтов</span><h1>Сайты для компаний <span>концепты для бизнеса Москвы без сайта</span></h1><div class="list">'+D.map(function(x,i){return '<a href="?c='+(i+1)+'"><b>'+esc(x[0])+'</b><span>'+esc(x[1])+' · ★ '+x[4]+'</span><span>'+esc(x[2])+'</span></a>'}).join('')+'</div></div></section></main>';
+}else{
+ var c=co[1].toLowerCase();for(var i=0;i<K.length;i++)if(K[i][0].test(c)){d=K[i][1];break}
+ document.title=co[0]+' — '+co[1];
+ document.getElementById('demo').textContent='Демо-концепт сайта. Это не официальный сайт компании «'+co[0]+'». Данные из открытой карточки на Яндекс Картах.';
+ var N=esc(co[0]),A=esc(co[2]),P=esc(co[3]);
+ app.innerHTML='<header><div class="w"><div class="logo">'+N+'<i>.</i></div><nav><a href="#svc">Услуги</a><a href="#why">Почему мы</a><a href="#ct">Контакты</a></nav></div></header><main>'+
+ '<section class="hero"><div class="w"><span class="chip">★ <b>'+co[4]+'</b> на Яндекс Картах</span><h1>'+N+'<span>'+esc(co[1])+'</span></h1><p class="lead">'+d.lead+'</p><div class="cta"><a class="btn p" href="#ct">Записаться</a><a class="btn" href="#svc">Услуги и цены</a></div></div></section>'+
+ '<section class="s" id="svc"><div class="w"><p class="eb">Услуги</p><h2>'+d.h+'</h2><div class="grid">'+d.s.map(function(x){return '<div class="card"><div class="ci"><div class="ic"></div><h3>'+x[0]+'</h3><p>'+x[1]+'</p><span class="pr">'+x[2]+'</span></div></div>'}).join('')+'</div></div></section>'+
+ '<section class="s" id="why"><div class="w"><p class="eb">Почему мы</p><h2>Нас выбирают по отзывам</h2><div class="why"><div><b>'+co[4]+'</b><span>средняя оценка клиентов</span></div><div><b>'+d.w[0]+'</b><span>'+d.w[1]+'</span></div><div><b>'+d.w3[0]+'</b><span>'+d.w3[1]+'</span></div><div><b>Рядом</b><span>удобно добраться</span></div></div></div></section>'+
+ '<section class="s" id="ct"><div class="w"><p class="eb">Контакты</p><h2>Приходите или позвоните</h2><div class="ct"><div class="box"><div class="row"><small>Адрес</small><div>'+A+'</div></div><div class="row"><small>Телефон</small><div class="phone">'+P+'</div></div><div class="row"><small>На карте</small><div><a class="btn" href="https://yandex.ru/maps/org/'+co[5]+'/" target="_blank" rel="noopener">Открыть в Яндекс Картах ↗</a></div></div></div>'+
+ '<div class="box"><form id="f"><h3 style="margin:0;font:700 20px var(--fd)">Заявка на обратный звонок</h3><label for="n">Имя</label><input id="n" required autocomplete="name"><label for="t">Телефон</label><input id="t" required type="tel" autocomplete="tel"><button class="btn p" type="submit">Отправить заявку</button><p id="msg" class="ok" hidden>Это демо: заявка никуда не отправляется.</p></form></div></div></div></section></main>'+
+ '<footer><div class="w"><span>'+N+' · '+A+'</span><a href="./" style="color:inherit">Все демо-сайты</a></div></footer>';
+ document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();document.getElementById('msg').hidden=false});
+}
+var r=document.documentElement.style;r.setProperty('--acc',d.acc);r.setProperty('--acc2',d.acc2);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduce&&matchMedia('(hover:hover)').matches)document.querySelectorAll('.card').forEach(function(k){var ci=k.querySelector('.ci');k.onmousemove=function(e){var b=k.getBoundingClientRect();ci.style.transform='rotateY('+((e.clientX-b.left)/b.width-.5)*14+'deg) rotateX('+(-((e.clientY-b.top)/b.height-.5)*14)+'deg)'};k.onmouseleave=function(){ci.style.transform=''}});
+if(typeof THREE==='undefined')return;var R;try{R=new THREE.WebGLRenderer({canvas:document.getElementById('c'),antialias:true})}catch(e){return}
+R.setPixelRatio(Math.min(devicePixelRatio,2));R.outputEncoding=THREE.sRGBEncoding;R.toneMapping=THREE.ACESFilmicToneMapping;
+var S=new THREE.Scene();S.background=new THREE.Color(0x0b0d12);S.fog=new THREE.Fog(0x0b0d12,8,20);var C=new THREE.PerspectiveCamera(40,1,.1,100);C.position.z=8;
+var ec=document.createElement('canvas');ec.width=512;ec.height=256;var g=ec.getContext('2d');var gr=g.createLinearGradient(0,0,0,256);gr.addColorStop(0,'#1a2030');gr.addColorStop(.5,'#06080c');gr.addColorStop(1,'#020304');g.fillStyle=gr;g.fillRect(0,0,512,256);
+function sb(x,y,s,col){var q=g.createRadialGradient(x,y,0,x,y,s);q.addColorStop(0,col);q.addColorStop(1,'rgba(0,0,0,0)');g.fillStyle=q;g.fillRect(x-s,y-s,s*2,s*2)}
+sb(130,80,70,d.acc);sb(380,90,80,d.acc2);sb(256,30,90,'rgba(255,255,255,.7)');
+var et=new THREE.CanvasTexture(ec);et.mapping=THREE.EquirectangularReflectionMapping;et.encoding=THREE.sRGBEncoding;S.environment=new THREE.PMREMGenerator(R).fromEquirectangular(et).texture;
+var M=new THREE.MeshPhysicalMaterial({color:0xffffff,metalness:1,roughness:.15,clearcoat:1});var A=new THREE.MeshPhysicalMaterial({color:new THREE.Color(d.acc),metalness:.5,roughness:.25,clearcoat:1});
+var geo;
+if(d.shape==='gear'){var sh=new THREE.Shape(),n=12;for(var j=0;j<n*2;j++){var a=j/(n*2)*Math.PI*2,a2=(j+1)/(n*2)*Math.PI*2,rr=j%2?1.25:1.55;if(j===0)sh.moveTo(Math.cos(a)*rr,Math.sin(a)*rr);else sh.lineTo(Math.cos(a)*rr,Math.sin(a)*rr);sh.lineTo(Math.cos(a2)*rr,Math.sin(a2)*rr)}var ho=new THREE.Path();ho.absarc(0,0,.5,0,Math.PI*2,true);sh.holes.push(ho);geo=new THREE.ExtrudeGeometry(sh,{depth:.5,bevelEnabled:true,bevelSize:.06,bevelThickness:.06,bevelSegments:3});geo.center()}
+else if(d.shape==='torus')geo=new THREE.TorusGeometry(1.2,.5,48,120);
+else if(d.shape==='knot')geo=new THREE.TorusKnotGeometry(1,.34,220,32);
+else if(d.shape==='box')geo=new THREE.BoxGeometry(2,2,2);
+else if(d.shape==='blob')geo=new THREE.SphereGeometry(1.4,96,64);
+else geo=new THREE.IcosahedronGeometry(1.5,1);
+var hero=new THREE.Mesh(geo,M),rig=new THREE.Group();rig.add(hero);S.add(rig);
+var ring=new THREE.Mesh(new THREE.TorusGeometry(2.4,.02,12,140),A);ring.rotation.x=1.2;rig.add(ring);
+var bits=[];for(var k=0;k<18;k++){var b=new THREE.Mesh(k%2?new THREE.IcosahedronGeometry(.18,0):new THREE.BoxGeometry(.24,.24,.24),k%3?M:A);b.position.set((Math.random()-.5)*14,-3-Math.random()*20,(Math.random()-.5)*5-2);b.userData=.3+Math.random()*.6;S.add(b);bits.push(b)}
+S.add(new THREE.AmbientLight(0xffffff,.2));var L=new THREE.PointLight(new THREE.Color(d.acc),2,30);L.position.set(-4,3,5);S.add(L);
+var bx=0,by=0;function rs(){var w=innerWidth,h=innerHeight;R.setSize(w,h,false);C.aspect=w/h;C.updateProjectionMatrix();bx=w<900?.8:2.8;by=w<900?-1.8:0;rig.scale.setScalar(w<900?.65:1)}rs();addEventListener('resize',rs);
+var mx=0,my=0,tx=0,ty=0;addEventListener('pointermove',function(e){tx=e.clientX/innerWidth-.5;ty=e.clientY/innerHeight-.5});
+var clk=new THREE.Clock();(function f(){requestAnimationFrame(f);var t=reduce?0:clk.getElapsedTime();mx+=(tx-mx)*.06;my+=(ty-my)*.06;var sp=scrollY/innerHeight;
+rig.position.set(bx+mx*.6,by-sp*2-my*.4,-sp*2);hero.rotation.y=t*.4+mx*1.5;hero.rotation.x=t*.2+my;ring.rotation.z=t*.3;
+C.position.y=-sp*3;C.lookAt(0,C.position.y,0);bits.forEach(function(b){b.rotation.x+=.01*b.userData*(reduce?0:1);b.rotation.y+=.008*b.userData*(reduce?0:1)});R.render(S,C)})();
+})();
+</script>
+</body>
+</html>
