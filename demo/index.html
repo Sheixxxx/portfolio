@@ -102,7 +102,7 @@ var K=[
 var DF={acc:'#ffb357',acc2:'#7fd6e8',shape:'ico',lead:'Быстро, аккуратно и с гарантией. Бесплатная диагностика при ремонте у нас.',h:'Что мы делаем',s:[['Диагностика','Найдём причину неисправности','бесплатно'],['Срочный ремонт','Часто — в день обращения','от 900 ₽'],['Запчасти','Оригинальные и проверенные','в наличии']],w:['1 день','средний срок ремонта'],w3:['до 12 мес','гарантия']};
 function esc(s){return String(s).replace(/[&<>"]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]})}
 var q=new URLSearchParams(location.search).get('c'),n=parseInt(q,10),co=D[n-1],app=document.getElementById('app'),d=DF;
-if(!co){
+if(!co&&new URLSearchParams(location.search).get('k')!=='m7x2q'){document.getElementById('demo').hidden=true;document.title='Страница не найдена';app.innerHTML='<main><section class="hero"><div class="w"><h1>Страница не найдена</h1></div></section></main>';}else if(!co){
  document.title='Демо-сайты для бизнеса Москвы';
  app.innerHTML='<main><section class="hero"><div class="w"><span class="chip">'+D.length+' демо-сайтов</span><h1>Сайты для компаний <span>концепты для бизнеса Москвы без сайта</span></h1><div class="list">'+D.map(function(x,i){return '<a href="?c='+(i+1)+'"><b>'+esc(x[0])+'</b><span>'+esc(x[1])+' · ★ '+x[4]+'</span><span>'+esc(x[2])+'</span></a>'}).join('')+'</div></div></section></main>';
 }else{
@@ -116,7 +116,7 @@ if(!co){
  '<section class="s" id="why"><div class="w"><p class="eb">Почему мы</p><h2>Нас выбирают по отзывам</h2><div class="why"><div><b>'+co[4]+'</b><span>средняя оценка клиентов</span></div><div><b>'+d.w[0]+'</b><span>'+d.w[1]+'</span></div><div><b>'+d.w3[0]+'</b><span>'+d.w3[1]+'</span></div><div><b>Рядом</b><span>удобно добраться</span></div></div></div></section>'+
  '<section class="s" id="ct"><div class="w"><p class="eb">Контакты</p><h2>Приходите или позвоните</h2><div class="ct"><div class="box"><div class="row"><small>Адрес</small><div>'+A+'</div></div><div class="row"><small>Телефон</small><div class="phone">'+P+'</div></div><div class="row"><small>На карте</small><div><a class="btn" href="https://yandex.ru/maps/org/'+co[5]+'/" target="_blank" rel="noopener">Открыть в Яндекс Картах ↗</a></div></div></div>'+
  '<div class="box"><form id="f"><h3 style="margin:0;font:700 20px var(--fd)">Заявка на обратный звонок</h3><label for="n">Имя</label><input id="n" required autocomplete="name"><label for="t">Телефон</label><input id="t" required type="tel" autocomplete="tel"><button class="btn p" type="submit">Отправить заявку</button><p id="msg" class="ok" hidden>Это демо: заявка никуда не отправляется.</p></form></div></div></div></section></main>'+
- '<footer><div class="w"><span>'+N+' · '+A+'</span><a href="./" style="color:inherit">Все демо-сайты</a></div></footer>';
+ '<footer><div class="w"><span>'+N+' · '+A+'</span><span>Демо-концепт</span></div></footer>';
  document.getElementById('f').addEventListener('submit',function(e){e.preventDefault();document.getElementById('msg').hidden=false});
 }
 var r=document.documentElement.style;r.setProperty('--acc',d.acc);r.setProperty('--acc2',d.acc2);
